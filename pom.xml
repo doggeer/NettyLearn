@@ -13,5 +13,31 @@
         <module>demo-netty-1-01</module>
     </modules>
 
+    <properties>
+        <netty_version>4.1.36.Final</netty_version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Netty 4.1.36 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty_version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
