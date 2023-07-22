@@ -22,13 +22,11 @@ public class MyChannelInitializer extends ChannelInitializer<SocketChannel> {
         System.out.println("链接报告完毕");
 
 
-        channel.pipeline().addLast(new LineBasedFrameDecoder(1024));
+        channel.pipeline().addLast(new LineBasedFrameDecoder(1024)); // 按照1024的长度进行数据
 
         channel.pipeline().addLast(new StringDecoder(Charset.forName("GBK")));
 
         // 在消息处理管道中添加我们自己的处理器
         channel.pipeline().addLast(new MyServerHandler());
-
-
     }
 }
