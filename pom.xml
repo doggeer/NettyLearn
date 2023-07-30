@@ -11,6 +11,7 @@
 
     <modules>
         <module>demo-netty-1-01</module>
+        <module>demo-netty-2-01</module>
     </modules>
 
     <properties>
@@ -37,6 +38,19 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
+        </dependency>
+        <!--  protobuf 支持 Java 核心包-->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.22.0</version>
+        </dependency>
+
+        <!--  proto 与 Json 互转会用到-->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>3.22.0</version>
         </dependency>
     </dependencies>
 
