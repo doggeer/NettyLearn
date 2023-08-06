@@ -19,4 +19,13 @@ public class Request {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+
+    public Object getResult() {
+        return result;
+    }
+
+    public void setResult(Object result) {
+        this.result = result;
+    }
 }
