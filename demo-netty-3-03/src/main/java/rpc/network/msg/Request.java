@@ -12,6 +12,46 @@ public class Request {
      */
     private Object result;
 
+    private String channel;
+
+    private String nozzle;
+
+    private String ref;
+
+    private String alias;
+
+    public String getChannel() {
+        return channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public String getNozzle() {
+        return nozzle;
+    }
+
+    public void setNozzle(String nozzle) {
+        this.nozzle = nozzle;
+    }
+
+    public String getRef() {
+        return ref;
+    }
+
+    public void setRef(String ref) {
+        this.ref = ref;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     public String getRequestId() {
         return requestId;
     }

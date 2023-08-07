@@ -3,5 +3,5 @@ package rpc.config;
 /**
  * @author wc
  */
-public class ConsumerConfig {
+public class ConsumerConfig<T> {
 }

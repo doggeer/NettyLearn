@@ -18,7 +18,16 @@ import rpc.network.msg.Response;
  */
 public class ClientSocket implements Runnable {
 
+    private String inetHost;
+
+    private int inetPort;
+
     private ChannelFuture future;
+
+    public ClientSocket(String inetHost, int inetPort) {
+        this.inetHost = inetHost;
+        this.inetPort = inetPort;
+    }
 
     @Override
     public void run() {

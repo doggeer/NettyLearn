@@ -22,6 +22,14 @@ public class ServerConfig {
         this.host = host;
     }
 
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
+
     protected void doExportServer(){
         System.out.println("生产者信息发布.....");
     }
