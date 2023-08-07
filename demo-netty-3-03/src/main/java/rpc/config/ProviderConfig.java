@@ -24,6 +24,26 @@ public class ProviderConfig {
     private String alias;
 
 
+    private String Host;
+
+    private int port;
+
+    public String getHost() {
+        return Host;
+    }
+
+    public void setHost(String host) {
+        Host = host;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
     public ProviderConfig(String nozzle, String ref, String alias) {
         this.nozzle = nozzle;
         this.ref = ref;

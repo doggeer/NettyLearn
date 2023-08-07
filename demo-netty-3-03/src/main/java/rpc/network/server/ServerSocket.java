@@ -8,12 +8,19 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import org.springframework.context.ApplicationContext;
 import rpc.network.codec.RpcDecoder;
 import rpc.network.codec.RpcEncoder;
 import rpc.network.msg.Request;
 import rpc.network.msg.Response;
 
 public class ServerSocket implements Runnable{
+    private ApplicationContext applicationContext;
+
+    public ServerSocket(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
+
     @Override
     public void run() {
 
@@ -30,7 +37,7 @@ public class ServerSocket implements Runnable{
                             ch.pipeline().addLast(
                                     new RpcDecoder(Request.class),
                                     new RpcEncoder(Response.class),
-                                    new MyServerHandler());
+                                    new MyServerHandler(applicationContext));
                         }
                     });
 

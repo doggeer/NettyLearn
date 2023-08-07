@@ -1,5 +1,7 @@
 package rpc.network.msg;
 
+import io.netty.channel.Channel;
+
 public class Request {
 
     /**
@@ -12,7 +14,7 @@ public class Request {
      */
     private Object result;
 
-    private String channel;
+    private Channel channel;
 
     private String nozzle;
 
@@ -20,11 +22,42 @@ public class Request {
 
     private String alias;
 
-    public String getChannel() {
+
+    private String methodName;
+
+    private Class<?>[] paramTypes;
+
+    private Object[] args;
+
+    public String getMethodName() {
+        return methodName;
+    }
+
+    public void setMethodName(String methodName) {
+        this.methodName = methodName;
+    }
+
+    public Class<?>[] getParamTypes() {
+        return paramTypes;
+    }
+
+    public void setParamTypes(Class<?>[] paramTypes) {
+        this.paramTypes = paramTypes;
+    }
+
+    public Object[] getArgs() {
+        return args;
+    }
+
+    public void setArgs(Object[] args) {
+        this.args = args;
+    }
+
+    public Channel getChannel() {
         return channel;
     }
 
-    public void setChannel(String channel) {
+    public void setChannel(Channel channel) {
         this.channel = channel;
     }
 

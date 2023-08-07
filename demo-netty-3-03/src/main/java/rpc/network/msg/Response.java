@@ -9,6 +9,16 @@ public class Response {
 
     private String param;
 
+    private Object result;
+
+    public Object getResult() {
+        return result;
+    }
+
+    public void setResult(Object result) {
+        this.result = result;
+    }
+
     public Response(String requestId, String param) {
         this.requestId = requestId;
         this.param = param;
