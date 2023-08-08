@@ -18,13 +18,13 @@ public class ServiceBean extends ServerConfig implements ApplicationContextAware
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         // 进行生产者信息发布
         log.info("启动注册中心....");
-        RedisRegistryCenter.init(getHost(), getPort());
+        RedisRegistryCenter.init(getHost(), Integer.parseInt(getPort()));
         log.info("启动注册中心完成 {} {}", getHost(), getPort());
 
-        // 初始化服务端
-        ServerSocket serverSocket = new ServerSocket(applicationContext);
-        new Thread(serverSocket).start();
-
+        if (applicationContext.containsBean("provider_helloService")) {
+            ServerSocket serverSocket = new ServerSocket(applicationContext, LocalServerInfo.LOCAL_HOST, Integer.parseInt(LocalServerInfo.LOCAL_PORT));
+            new Thread(serverSocket).start();
+        }
 
         log.info("初始化生产端服务完成 {} {}", LocalServerInfo.LOCAL_HOST, LocalServerInfo.LOCAL_PORT);
     }

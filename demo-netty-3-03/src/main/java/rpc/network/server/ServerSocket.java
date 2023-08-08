@@ -17,8 +17,18 @@ import rpc.network.msg.Response;
 public class ServerSocket implements Runnable{
     private ApplicationContext applicationContext;
 
+    private String inet;
+
+    private int port;
+
     public ServerSocket(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
+    }
+
+    public ServerSocket(ApplicationContext applicationContext, String inet, int port) {
+        this.applicationContext = applicationContext;
+        this.inet = inet;
+        this.port = port;
     }
 
     @Override
@@ -42,7 +52,7 @@ public class ServerSocket implements Runnable{
                     });
 
             ChannelFuture f = null;
-            f = b.bind(7397).sync();
+            f = b.bind(inet,port).sync();
             f.channel().closeFuture().sync();
 
         } catch (InterruptedException e) {

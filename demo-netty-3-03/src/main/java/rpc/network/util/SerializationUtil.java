@@ -30,7 +30,15 @@ public class SerializationUtil {
 
         LinkedBuffer buffer = LinkedBuffer.allocate();
 
-        byte[] result = ProtostuffIOUtil.toByteArray(object, schema, buffer);
+        byte[] result = new byte[]{};
+
+        try {
+            result = ProtostuffIOUtil.toByteArray(object, schema, buffer);
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+
+
         return result;
     }
 

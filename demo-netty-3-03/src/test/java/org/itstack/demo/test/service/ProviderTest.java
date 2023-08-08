@@ -2,10 +2,11 @@ package org.itstack.demo.test.service;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class ApiTest {
+public class ProviderTest {
 
     public static void main(String[] args) {
-        String[] configs = {"itstack-rpc-consumer.xml", "itstack-rpc-provider.xml"};
+        String[] configs = {"itstack-rpc-provider.xml"};
         new ClassPathXmlApplicationContext(configs);
+        System.out.println("哈哈哈");
     }
 }

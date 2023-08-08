@@ -46,7 +46,7 @@ public class ClientSocket implements Runnable {
                             new MyClientHandler());
                 }
             });
-            ChannelFuture f = b.connect("127.0.0.1", 7397).sync();
+            ChannelFuture f = b.connect(inetHost, inetPort).sync();
             this.future = f;
             f.channel().closeFuture().sync();
         } catch (InterruptedException e) {

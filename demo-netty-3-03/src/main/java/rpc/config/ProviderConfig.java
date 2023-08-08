@@ -24,23 +24,23 @@ public class ProviderConfig {
     private String alias;
 
 
-    private String Host;
+    private String host;
 
-    private int port;
+    private String port;
 
     public String getHost() {
-        return Host;
+        return host;
     }
 
     public void setHost(String host) {
-        Host = host;
+        this.host = host;
     }
 
-    public int getPort() {
+    public String getPort() {
         return port;
     }
 
-    public void setPort(int port) {
+    public void setPort(String port) {
         this.port = port;
     }
 

@@ -3,12 +3,12 @@ package rpc.config;
 public class ServerConfig {
     private String host;
 
-    private int port;
+    private String port;
 
     private String ref;
 
 
-    public ServerConfig(String host, int port) {
+    public ServerConfig(String host, String port) {
         this.host = host;
         this.port = port;
     }
@@ -24,11 +24,11 @@ public class ServerConfig {
         this.host = host;
     }
 
-    public int getPort() {
+    public String getPort() {
         return port;
     }
 
-    public void setPort(int port) {
+    public void setPort(String port) {
         this.port = port;
     }
 

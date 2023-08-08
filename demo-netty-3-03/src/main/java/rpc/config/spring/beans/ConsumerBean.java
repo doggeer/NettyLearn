@@ -30,8 +30,8 @@ public class ConsumerBean<T> extends ConsumerConfig implements FactoryBean {
 
 
         if (null == channelFuture) {
-            ClientSocket clientSocket = new ClientSocket(serverConfig.getHost(), serverConfig.getPort());
-            new Thread(clientSocket).run();
+            ClientSocket clientSocket = new ClientSocket(serverConfig.getHost(), Integer.parseInt(serverConfig.getPort()));
+            new Thread(clientSocket).start();
 
             for (int i = 0; i < 100; i++) {
 
