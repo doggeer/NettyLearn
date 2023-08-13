@@ -9,5 +9,7 @@
 
     <rpc:consumer id="helloService" nozzle="org.itstack.demo.test.service.HelloServiceInterface" alias="itStackRpc"/>
 
+    <bean id="userService" class="org.itstack.demo.test.service.UserService"/>
+
 
 </beans>

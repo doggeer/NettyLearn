@@ -8,6 +8,9 @@ public class ConsumerTest {
         String[] configs = {"itstack-rpc-consumer.xml"};
         ClassPathXmlApplicationContext application = new ClassPathXmlApplicationContext(configs);
 
+        IUserService userService = (IUserService) application.getBean("userService");
+
+
         HelloServiceInterface helloService = (HelloServiceInterface) application.getBean("helloService");
 
         String name = helloService.getName();
